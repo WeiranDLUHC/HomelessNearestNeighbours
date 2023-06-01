@@ -35,4 +35,7 @@ final_matrix_names<-apply(final_matrix,2,f)
 
 # clean up final matrix
 final_matrix_names <- rbind(colnames(final_matrix_names), final_matrix_names)
-colnames(final_matrix_names) <- paste0('V', seq_len(ncol(final_matrix_names)))
+final_matrix_names<-t(final_matrix_names)
+colnames(final_matrix_names) <-c("NN",1:(ncol(final_matrix_names)-1))
+write.csv(final_matrix_names[],"Nearest Neighbours Table.csv",row.names = FALSE)
+
