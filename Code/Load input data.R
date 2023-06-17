@@ -10,11 +10,11 @@ library(scales)
 # load input data
 
 NN_inputs <-
-  read_excel("Files/Input Data.xlsx", sheet = "NN Raw Data")
+  read_excel("NN Files/Input Data.xlsx", sheet = "NN Raw Data")
 
 
 LA_names <-
-  read_excel("Files/Input Data.xlsx", sheet = "Area Names")
+  read_excel("NN Files/Input Data.xlsx", sheet = "Area Names")
 NN_inputs<-LA_names%>%
   left_join(NN_inputs,by=c("LA Code"="Area Code"))%>%
   select(-c(`Area Name`,`LA Code`))
